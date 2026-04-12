@@ -70,7 +70,11 @@ We provide demo data and tutorial workflows for:
 - `tumor_normal` task example
 - subclone identification task example
 
-Start here: [docs/tutorials/quickstart_demo.md](docs/tutorials/quickstart_demo.md)
+Documentation site:
+[https://cnvdocs.readthedocs.io/en/latest/](https://cnvdocs.readthedocs.io/en/latest/)
+
+Quickstart tutorial:
+[https://cnvdocs.readthedocs.io/en/latest/tutorials/quickstart_demo/](https://cnvdocs.readthedocs.io/en/latest/tutorials/quickstart_demo/)
 
 ## Contact
 
