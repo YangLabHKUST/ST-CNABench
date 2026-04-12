@@ -27,7 +27,8 @@ pip install -e .
 st-cnvbench --help
 ```
 
-For method-specific runtime environments, external tools, and reference data, see [docs/installation.md](docs/installation.md).
+For method-specific runtime environments, external tools, and reference data, see the installation guide:
+[https://cnvdocs.readthedocs.io/en/latest/installation/](https://cnvdocs.readthedocs.io/en/latest/installation/)
 
 ## Run
 
