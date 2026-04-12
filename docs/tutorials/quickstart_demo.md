@@ -1,7 +1,7 @@
 # Quickstart Demo And Expected Outputs
 
 This page shows the full `prep -> run -> eval` command flow for the public cSCC demo and the expected output layout.
-For the public release, the prepared demo bundle and example outputs should be distributed separately from git through a Google Drive download link.
+For the public release, the prepared demo bundle and example outputs are distributed separately from git through a Google Drive download link.
 After extracting that bundle, the expected layout should start under:
 
 ```text
@@ -16,14 +16,17 @@ The demo dataset ID used in the commands below is `P6_vis_rep1`.
 1. Install the controller environment
 2. Prepare method runtime environments
 3. Download the external tools and reference data
-4. Download the public demo bundle when that link is published
+4. Download the public demo bundle
 5. Use the provided demo configs
 
 The default public demo enables `CopyKAT`, so it does not require allele-aware reference bundles or external tool source trees.
 
 ## Demo Bundle
 
-Add your public Google Drive link for the packaged cSCC demo bundle here before release.
+Download the packaged cSCC demo bundle from:
+
+- [cSCC demo bundle (Google Drive)](https://drive.google.com/file/d/1WvsmmnYYDYwAq87ZdIw50NHOyNNwXhEp/view?usp=drive_link)
+
 The unpacked bundle should provide the `demo_runs/cscc_demo/` layout referenced below.
 
 ## Included Example Outputs

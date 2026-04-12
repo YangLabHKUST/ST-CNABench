@@ -107,8 +107,12 @@ Detailed file layout and usage notes are in [Reference Data](reference_data.md).
 
 ## Demo Bundle
 
-The public cSCC demo may be distributed as a separate packaged bundle because the full demo outputs can be too large for git.
-When you publish that bundle, add its Google Drive download link here and in [Quickstart Demo And Expected Outputs](tutorials/quickstart_demo.md).
+Download the public cSCC demo bundle from:
+
+- [cSCC demo bundle (Google Drive)](https://drive.google.com/file/d/1WvsmmnYYDYwAq87ZdIw50NHOyNNwXhEp/view?usp=drive_link)
+
+After extraction, the expected example outputs should appear under `demo_runs/cscc_demo/`.
+See [Quickstart Demo And Expected Outputs](tutorials/quickstart_demo.md) for the expected layout and demo commands.
 
 ## After Installation
 
