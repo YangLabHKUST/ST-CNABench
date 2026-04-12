@@ -1,0 +1,30 @@
+# See docs/evaluation.md for the current public evaluation config contract.
+project_settings:
+  root_dir: "."
+  results_dir: "${root_dir}/outputs/raw_results"
+  eval_dir: "${root_dir}/outputs/evaluation"
+
+global_params:
+  bin_size: 100000
+  genome_version: "hg38"
+  gene_annot_path: "${root_dir}/refs/hg38_genome_info/hg38_genes_annot.txt"
+
+eval_list:
+  InferCNV:
+    eval_name: ["InferCNV_expr", "InferCNV_cnv"]
+  CopyKAT:
+    eval_name: ["CopyKAT"]
+  SCEVAN:
+    eval_name: ["SCEVAN_expr", "SCEVAN_cnv"]
+  Clonalscope_WGS:
+    eval_name: ["Clonalscope_WGS"]
+  Clonalscope_NoWGS:
+    eval_name: ["Clonalscope_NoWGS"]
+  Numbat:
+    eval_name: ["Numbat_expr", "Numbat_cnv"]
+  CalicoST:
+    eval_name: ["CalicoST"]
+  STARCH:
+    eval_name: ["STARCH"]
+  Xclone:
+    eval_name: ["Xclone_expr", "Xclone_cnv"]

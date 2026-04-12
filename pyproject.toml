@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68,<82", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "st-cnvbench"
+version = "0.1.0"
+description = "Benchmark CNV inference methods on spatial transcriptomics."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Proprietary until a publication license is chosen"}
+authors = [
+  {name = "Shanav"}
+]
+dependencies = [
+  "anndata>=0.11",
+  "esda",
+  "hmmlearn",
+  "libpysal",
+  "matplotlib>=3.8",
+  "networkx>=3.0",
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "Pillow>=10.0",
+  "pyranges>=0.0.120",
+  "pyreadr>=0.5",
+  "PyYAML>=6.0",
+  "scanpy>=1.10",
+  "scikit-learn>=1.4",
+  "scipy>=1.10",
+  "seaborn>=0.13",
+  "setuptools>=68,<82",
+  "squidpy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+st-cnvbench = "st_cnvbench.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+st_cnvbench = ["**/*.R", "**/*.sh", "**/*.md", "**/*.template"]

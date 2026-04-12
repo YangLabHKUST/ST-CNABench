@@ -1,0 +1,24 @@
+project_settings:
+  dataset_root: "./demo_data/cscc_demo"
+  output_root: "./demo_runs/cscc_demo/processed_data"
+
+P6_vis_rep1:
+  dataset_id: "P6_vis_rep1"
+  platform: "Visium"
+  format: "SpaceRanger"
+  genome: "hg38"
+  species: "human"
+  ref_norm: true
+  tumor_normal_mode: "off"
+  raw:
+    root: "${dataset_root}/raw/P6_vis/P6_vis_rep1"
+    tumor_normal: "${dataset_root}/raw/P6_vis/P6_vis_rep1/metadata_P6_vis_rep1_tumor_normal.tsv"
+    tumor_normal_gt: "${dataset_root}/raw/P6_vis/P6_vis_rep1/metadata_P6_vis_rep1_tumor_normal.tsv"
+    cnv_gt: "${dataset_root}/raw/P6_vis/GT/WES_CNV_FACETS/P6_tumor_vs_P6_normal.vcf"
+    wgs_wes_tumor_bedg: "${dataset_root}/raw/P6_vis/GT/wes_100kb_counts/P6_tumor.hg38.100000b.windows.counts.bedg"
+    wgs_wes_normal_bedg: "${dataset_root}/raw/P6_vis/GT/wes_100kb_counts/P6_normal.hg38.100000b.windows.counts.bedg"
+    bam: "${dataset_root}/raw/P6_vis/P6_vis_rep1/possorted_genome_bam.bam"
+    bai: "${dataset_root}/raw/P6_vis/P6_vis_rep1/possorted_genome_bam.bam.bai"
+    scalefactors: "${dataset_root}/raw/P6_vis/P6_vis_rep1/spatial/scalefactors_json.json"
+  output:
+    root: "${output_root}/P6_vis_rep1"

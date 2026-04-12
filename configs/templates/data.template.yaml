@@ -1,0 +1,28 @@
+# See docs/data_preparation.md for the current public dataset input contract.
+project_settings:
+  dataset_root: "./demo_data"
+  output_root: "./outputs/processed_data"
+
+example_dataset:
+  dataset_id: "example_dataset"
+  platform: "Visium"
+  format: "SpaceRanger"
+  genome: "hg38"
+  species: "human"
+  ref_norm: true
+  tumor_normal_mode: "subset"
+  raw:
+    root: "${dataset_root}/example_dataset/raw"
+    tumor_normal: "${dataset_root}/example_dataset/metadata_tumor_normal.tsv"
+    tumor_normal_gt: "${dataset_root}/example_dataset/metadata_tumor_normal_gt.tsv"
+    subclone_gt: "${dataset_root}/example_dataset/metadata_subclone.tsv"
+    cnv_gt: "${dataset_root}/example_dataset/GT/example_cnv_gt.vcf.tsv"
+    wgs_wes_tumor_bedg: null
+    wgs_wes_normal_bedg: null
+    bam: null
+    bai: null
+    beads_mapping: null
+    scalefactors: "${dataset_root}/example_dataset/raw/spatial/scalefactors_json.json"
+    tissue_image: null
+  output:
+    root: "${output_root}/example_dataset"

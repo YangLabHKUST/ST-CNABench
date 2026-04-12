@@ -1,0 +1,13 @@
+project_settings:
+  root_dir: "."
+  results_dir: "${root_dir}/demo_runs/cscc_demo/raw_results"
+  eval_dir: "${root_dir}/demo_runs/cscc_demo/evaluation"
+
+global_params:
+  bin_size: 100000
+  genome_version: "hg38"
+  gene_annot_path: "${root_dir}/refs/hg38_genome_info/hg38_genes_annot.txt"
+
+eval_list:
+  CopyKAT:
+    eval_name: ["CopyKAT"]

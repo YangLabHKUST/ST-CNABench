@@ -1,0 +1,137 @@
+project_settings:
+  root_dir: "."
+  results_dir: "${root_dir}/outputs/raw_results"
+  refs: "${root_dir}/refs"
+  exts: "${root_dir}/external_tools"
+  default_exec_mode: "docker"
+
+CalicoST:
+  enabled: false
+  env_name: "calicost_env"
+  docker_image: "hans0410/cnv-benchmark-calicost:1.0.0"
+  apptainer_sif: "${root_dir}/apptainer_sif/calicost.sif"
+  model_name: "CalicoST"
+  calicost_dir: "${exts}/CalicoST"
+  eagle_dir: "${exts}/Eagle_v2.4.1"
+  region_vcf: "${refs}/population_phasing/genome1K.phase3.SNP_AF5e2.chr1toX.hg38.ensemble_style.sorted.vcf.gz"
+  phasing_panel: "${refs}/population_phasing/1000G_hg38"
+  use_tumor_purity: false
+  n_clones: 3
+  n_threads: 20
+  UMItag: "Auto"
+  cellTAG: "CB"
+  per_dataset:
+    example_dataset:
+      n_clones: 4
+
+CopyKAT:
+  enabled: false
+  env_name: "copykat_env"
+  docker_image: "hans0410/cnv-benchmark-copykat:1.1.0"
+  apptainer_sif: "${root_dir}/apptainer_sif/copykat.sif"
+  model_name: "CopyKAT"
+  genome: "hg20"
+  win_size: 25
+  ks_cut: 0.1
+  distance: "euclidean"
+  n_cores: 20
+  n_clones: 3
+  per_dataset:
+    example_dataset:
+      n_clones: 4
+
+InferCNV:
+  enabled: false
+  env_name: "infercnv_env"
+  docker_image: "trinityctat/infercnv:latest"
+  apptainer_sif: "${root_dir}/apptainer_sif/infercnv.sif"
+  model_name: "InferCNV"
+  gene_order_file: "${refs}/hg38_genome_info/hg38_genes_simple.txt"
+  cutoff: 0.1
+  n_threads: 20
+  k_obs_groups: 3
+  per_dataset:
+    example_dataset:
+      k_obs_groups: 4
+
+Clonalscope_NoWGS:
+  enabled: false
+  env_name: "clonalscope_env"
+  docker_image: "hans0410/cnv-benchmark-clonalscope:1.1.0"
+  apptainer_sif: "${root_dir}/apptainer_sif/clonalscope.sif"
+  model_name: "Clonalscope_NoWGS"
+  gene_coords_file: "${refs}/hg38_genome_info/hg38_genes_simple.txt"
+  aux_data_dir: "${exts}/clonalscope/data-raw"
+  mincell: 50
+  per_dataset:
+    example_dataset:
+      mincell: 25
+
+Clonalscope_WGS:
+  enabled: false
+  env_name: "clonalscope_env"
+  docker_image: "hans0410/cnv-benchmark-clonalscope:1.1.0"
+  apptainer_sif: "${root_dir}/apptainer_sif/clonalscope.sif"
+  model_name: "Clonalscope_WGS"
+  hmm_states: [0.8, 1.0, 1.2]
+  gene_coords_file: "${refs}/hg38_genome_info/hg38_genes_simple.txt"
+  aux_data_dir: "${exts}/clonalscope/data-raw"
+  mincell: 50
+
+Numbat:
+  enabled: false
+  env_name: "numbat_env"
+  docker_image: "hans0410/cnv-benchmark-numbat:1.5.1"
+  apptainer_sif: "${root_dir}/apptainer_sif/numbat.sif"
+  model_name: "Numbat"
+  n_threads: 20
+  genome_version: "hg38"
+  pileup_script: "${exts}/numbat/inst/bin/pileup_and_phase.R"
+  eagle_path: "${exts}/Eagle_v2.4.1/eagle"
+  genetic_map: "${exts}/Eagle_v2.4.1/tables/genetic_map_hg38_withX.txt.gz"
+  snp_vcf_path: "${refs}/population_phasing/genome1K.phase3.SNP_AF5e2.chr1toX.hg38.ensemble_style.sorted.vcf.gz"
+  panel_dir: "${refs}/population_phasing/1000G_hg38"
+  UMItag: "Auto"
+  cellTAG: "CB"
+  n_clones: 3
+
+Xclone:
+  enabled: false
+  env_name: "xclone_env"
+  docker_image: "hans0410/cnv-benchmark-xclone:0.4.0"
+  apptainer_sif: "${root_dir}/apptainer_sif/xclone.sif"
+  model_name: "Xclone"
+  n_threads: 20
+  snp_vcf: "${refs}/population_phasing/genome1K.phase3.SNP_AF5e2.chr1toX.hg38.ensemble_style.sorted.vcf.gz"
+  gene_region: "${refs}/hg38_genome_info/hg38_genes_annot.txt"
+  eagle_path: "${exts}/Eagle_v2.4.1/eagle"
+  genetic_map: "${exts}/Eagle_v2.4.1/tables/genetic_map_hg38_withX.txt.gz"
+  panel_dir: "${refs}/population_phasing/1000G_hg38"
+  UMItag: "Auto"
+  cellTAG: "CB"
+  minCOUNT: 11
+  minMAF: 0.1
+  n_clusters: 3
+
+SCEVAN:
+  enabled: false
+  env_name: "scevan_env"
+  docker_image: "hans0410/cnv-benchmark-scevan:1.0.3"
+  apptainer_sif: "${root_dir}/apptainer_sif/scevan.sif"
+  model_name: "SCEVAN"
+  n_threads: 20
+
+STARCH:
+  enabled: false
+  env_name: "starch_env"
+  docker_image: "hans0410/cnv-benchmark-starch:1.0.0"
+  apptainer_sif: "${root_dir}/apptainer_sif/starch.sif"
+  model_name: "STARCH"
+  gene_mapping_file: "${refs}/hg38_genome_info/hg38_genes_simple.txt"
+  n_clusters: 3
+  beta_spot: 2
+  platform: "Visium"
+  returnnormal: 1
+  per_dataset:
+    example_dataset:
+      n_clusters: 4

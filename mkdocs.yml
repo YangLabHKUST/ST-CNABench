@@ -1,0 +1,29 @@
+site_name: ST-CNVBench
+site_description: Benchmark CNV inference methods on spatial transcriptomics.
+site_url: !ENV [READTHEDOCS_CANONICAL_URL, ""]
+docs_dir: docs
+
+theme:
+  name: material
+
+plugins:
+  - search
+
+nav:
+  - Home:
+      - Index: index.md
+      - Overview: overview.md
+      - Installation: installation.md
+  - Tutorials:
+      - Quickstart Demo And Expected Outputs: tutorials/quickstart_demo.md
+      - CNV Profile Task Example: tutorials/cnv_profile_hcc2t.md
+      - Tumor-Normal Classification Task Example: tutorials/tumor_normal_hcc2t.md
+      - Subclone Identification Task Example: tutorials/subclone_identification_slidednaseq.md
+      - Use Your Own Dataset: tutorials/use_your_own_dataset.md
+      - Use Your Own Model: tutorials/use_your_own_model.md
+  - Detailed:
+      - Dataset Preparation: data_preparation.md
+      - Model Run: model_run.md
+      - Evaluation: evaluation.md
+      - External Tools: external_tools.md
+      - Reference Data: reference_data.md

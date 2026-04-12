@@ -1,0 +1,19 @@
+project_settings:
+  root_dir: "."
+  results_dir: "${root_dir}/demo_runs/cscc_demo/raw_results"
+  refs: "${root_dir}/refs"
+  exts: "${root_dir}/external_tools"
+  default_exec_mode: "docker"
+
+CopyKAT:
+  enabled: true
+  env_name: "CopyKAT"
+  docker_image: "hans0410/cnv-benchmark-copykat:1.1.0"
+  apptainer_sif: "${root_dir}/apptainer_sif/copykat.sif"
+  model_name: "CopyKAT"
+  genome: "hg20"
+  win_size: 25
+  ks_cut: 0.1
+  distance: "euclidean"
+  n_cores: 4
+  n_clones: 2

@@ -1,0 +1,24 @@
+__pycache__/
+.pytest_cache/
+.snakemake/
+*.egg-info/
+*.pyc
+*.pyo
+*.perf
+*.log
+.DS_Store
+.nfs*
+
+demo_runs/
+outputs/
+.test_artifacts/
+
+# Local-only demo bundles and raw demo inputs
+demo_data/cscc_demo/raw/
+demo_data/cscc_demo/*.tar
+
+# Local-only large population phasing references and archives
+refs/population_phasing/1000G_hg38/
+refs/population_phasing/*.vcf.gz
+refs/population_phasing/*.vcf.gz.tbi
+refs/st_cnvbench_population_phasing_refs.tar
