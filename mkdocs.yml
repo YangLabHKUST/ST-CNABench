@@ -1,6 +1,8 @@
 site_name: ST-CNVBench
 site_description: Benchmark CNV inference methods on spatial transcriptomics.
 site_url: !ENV [READTHEDOCS_CANONICAL_URL, ""]
+repo_url: https://github.com/Hans-0410/STCNV-Bench
+repo_name: Hans-0410/STCNV-Bench
 docs_dir: docs
 
 theme:
