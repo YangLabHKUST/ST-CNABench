@@ -19,7 +19,7 @@ The current public release includes 8 CNV inference methods.
 ## Installation
 
 ```bash
-git clone https://github.com/Hans-0410/STCNV-Bench.git
+git clone https://github.com/YangLabHKUST/ST-CNVBench.git
 cd STCNV-Bench
 conda create -n benchmark_env python=3.10 -y
 conda activate benchmark_env

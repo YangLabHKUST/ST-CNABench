@@ -4,11 +4,11 @@ ST-CNVBench separates the Python controller from the per-method runtime environm
 
 ## Choose A Runtime Mode
 
-| Runtime | Best for |
-| --- | --- |
-| `conda` | Local use and method debugging |
-| `docker` | Reproducible runs on systems with Docker support |
-| `apptainer` | HPC systems without Docker daemon access |
+| Runtime     | Best for                                         |
+| ----------- | ------------------------------------------------ |
+| `conda`     | Local use and method debugging                   |
+| `docker`    | Reproducible runs on systems with Docker support |
+| `apptainer` | HPC systems without Docker daemon access         |
 
 ### Conda Or Mamba
 
@@ -44,7 +44,7 @@ apptainer pull apptainer_sif/copykat.sif docker://hans0410/cnv-benchmark-copykat
 Clone the repository, then create the controller environment from the repository root.
 
 ```bash
-git clone https://github.com/Hans-0410/STCNV-Bench.git
+git clone https://github.com/YangLabHKUST/ST-CNVBench.git
 cd STCNV-Bench
 conda create -n benchmark_env python=3.10 -y
 conda activate benchmark_env
