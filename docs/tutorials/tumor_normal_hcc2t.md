@@ -6,7 +6,7 @@ It uses `HCC-2T` as the example dataset.
 ## Data Source And Assumptions
 
 The HCC example is based on data from GSA-Human accession `HRA000437`.
-Raw FASTQ files are processed through our standard upstream workflow first, and the resulting benchmark-ready package is then used as the input to ST-CNVBench.
+Raw FASTQ files are processed through our standard upstream workflow first, and the resulting benchmark-ready package is then used as the input to ST-CNABench.
 
 In this tutorial, we assume:
 
@@ -24,7 +24,7 @@ For detailed config requirements, see [Dataset Preparation](../data_preparation.
 Run:
 
 ```bash
-st-cnvbench --steps prep \
+st-cnabench --steps prep \
   --data-config data.yaml \
   --prep-ids HCC-2T
 ```
@@ -47,7 +47,7 @@ Expected standardized outputs include:
 Run all benchmark methods that support `de_novo` tumor-normal inference:
 
 ```bash
-st-cnvbench --steps run \
+st-cnabench --steps run \
   --data-config data.yaml \
   --model-config models.yaml \
   --prep-ids HCC-2T \
@@ -65,7 +65,7 @@ Check raw model outputs under:
 Run `tumor_normal` evaluation across all configured methods that support this task:
 
 ```bash
-st-cnvbench --steps eval \
+st-cnabench --steps eval \
   --data-config data.yaml \
   --eval-config eval.yaml \
   --prep-ids HCC-2T \
@@ -109,6 +109,6 @@ This figure shows the confusion-matrix comparison across methods.
 ## Try Next
 
 - For the packaged cSCC demo, go to [Quickstart Demo And Expected Outputs](quickstart_demo.md)
-- For the CNV profile task example, go to [CNV Profile Task Example](cnv_profile_hcc2t.md)
+- For the CNA profile task example, go to [CNA Profile Task Example](cna_profile_hcc2t.md)
 - For the subclone task example, go to [Subclone Identification Task Example](subclone_identification_slidednaseq.md)
 - To adapt the workflow to your own data, go to [Use Your Own Dataset](use_your_own_dataset.md)

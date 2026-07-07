@@ -1,6 +1,6 @@
 # Reference Data
 
-This directory stores reference files used by ST-CNVBench.
+This directory stores reference files used by ST-CNABench.
 
 ## Included In Git
 

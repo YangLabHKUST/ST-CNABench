@@ -1,7 +1,7 @@
 FROM bioconductor/bioconductor_docker:RELEASE_3_21
 
-LABEL org.opencontainers.image.title="ST-CNVBench-CopyKAT" \
-      org.opencontainers.image.description="Docker image for CopyKat caller in CNV benchmarking workflow" \
+LABEL org.opencontainers.image.title="ST-CNABench-CopyKAT" \
+      org.opencontainers.image.description="Docker image for CopyKat caller in CNA benchmarking workflow" \
       org.opencontainers.image.authors="HANShi <shanav@connect.ust.hk>"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

@@ -1,9 +1,9 @@
-# ST-CNVBench
+# ST-CNABench
 
-ST-CNVBench is a public benchmark framework for copy number variation inference on spatial transcriptomics.
+ST-CNABench is a public benchmark framework for copy number alteration inference on spatial transcriptomics.
 It provides one controller for dataset preparation, model execution, and evaluation through a unified `prep -> run -> eval` workflow.
 
-The current public release includes 8 CNV inference methods.
+The current public release includes 8 CNA inference methods.
 
 ## Included Methods
 
@@ -19,23 +19,23 @@ The current public release includes 8 CNV inference methods.
 ## Installation
 
 ```bash
-git clone https://github.com/YangLabHKUST/ST-CNVBench.git
-cd STCNV-Bench
+git clone https://github.com/YangLabHKUST/ST-CNABench.git
+cd ST-CNABench
 conda create -n benchmark_env python=3.10 -y
 conda activate benchmark_env
 pip install -e .
-st-cnvbench --help
+st-cnabench --help
 ```
 
 For method-specific runtime environments, external tools, and reference data, see the installation guide:
-[https://cnvdocs.readthedocs.io/en/latest/installation/](https://cnvdocs.readthedocs.io/en/latest/installation/)
+[https://cnadocs.readthedocs.io/en/latest/installation/](https://cnadocs.readthedocs.io/en/latest/installation/)
 
 ## Run
 
 Prepare data:
 
 ```bash
-st-cnvbench --steps prep \
+st-cnabench --steps prep \
   --data-config <DATA_CONFIG> \
   --prep-ids <DATASET_ID>
 ```
@@ -43,7 +43,7 @@ st-cnvbench --steps prep \
 Run methods:
 
 ```bash
-st-cnvbench --steps run \
+st-cnabench --steps run \
   --data-config <DATA_CONFIG> \
   --model-config <MODEL_CONFIG> \
   --prep-ids <DATASET_ID> \
@@ -54,7 +54,7 @@ st-cnvbench --steps run \
 Evaluate results:
 
 ```bash
-st-cnvbench --steps eval \
+st-cnabench --steps eval \
   --data-config <DATA_CONFIG> \
   --eval-config <EVAL_CONFIG> \
   --prep-ids <DATASET_ID> \
@@ -67,15 +67,15 @@ st-cnvbench --steps eval \
 We provide demo data and tutorial workflows for:
 
 - the packaged cSCC demo pipeline
-- `cnv_profile` task example
+- `cna_profile` task example
 - `tumor_normal` task example
 - subclone identification task example
 
 Documentation site:
-[https://cnvdocs.readthedocs.io/en/latest/](https://cnvdocs.readthedocs.io/en/latest/)
+[https://cnadocs.readthedocs.io/en/latest/](https://cnadocs.readthedocs.io/en/latest/)
 
 Quickstart tutorial:
-[https://cnvdocs.readthedocs.io/en/latest/tutorials/quickstart_demo/](https://cnvdocs.readthedocs.io/en/latest/tutorials/quickstart_demo/)
+[https://cnadocs.readthedocs.io/en/latest/tutorials/quickstart_demo/](https://cnadocs.readthedocs.io/en/latest/tutorials/quickstart_demo/)
 
 ## Contact
 

@@ -1,6 +1,6 @@
 FROM bioconductor/bioconductor_docker:RELEASE_3_21
 
-LABEL org.opencontainers.image.title="ST-CNVBench-Numbat" \
+LABEL org.opencontainers.image.title="ST-CNABench-Numbat" \
       org.opencontainers.image.authors="HAN SHI"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

@@ -7,7 +7,7 @@ This page describes the public `data.yaml` contract and the standardized outputs
 Prepare one or more datasets:
 
 ```bash
-st-cnvbench --steps prep \
+st-cnabench --steps prep \
   --data-config data.yaml \
   --prep-ids sample_1 sample_2
 ```
@@ -51,7 +51,7 @@ Allowed values:
 | `tumor_normal` | Model-run annotation for reference-normal selection. In `de_novo` mode this can be `null`. |
 | `tumor_normal_gt` | Ground-truth tumor-normal annotation used only by evaluation. |
 | `subclone_gt` | Ground-truth spot-level subclone labels for subclone tasks. |
-| `cnv_gt` | Ground-truth CNV profile input for `cnv_profile`, and clone-level CNV GT for subclone tasks when applicable. |
+| `cna_gt` | Ground-truth CNA profile input for `cna_profile`, and clone-level CNA GT for subclone tasks when applicable. |
 | `bam`, `bai` | Alignment files needed by allele-aware wrappers such as `Numbat` and `Xclone`. |
 | `wgs_wes_tumor_bedg`, `wgs_wes_normal_bedg` | WGS/WES count tracks for `Clonalscope_WGS`. |
 | `beads_mapping` | Slide-DNA-seq style pseudo-barcode to original-barcode mapping for subclone evaluation. |
@@ -91,7 +91,7 @@ datasets:
       tumor_normal: null
       tumor_normal_gt: null
       subclone_gt: null
-      cnv_gt: null
+      cna_gt: null
       bam: null
       bai: null
       wgs_wes_tumor_bedg: null

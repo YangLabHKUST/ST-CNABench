@@ -1,10 +1,10 @@
-# ST-CNVBench
+# ST-CNABench
 
-ST-CNVBench benchmarks CNV inference methods on spatial transcriptomics through one public controller for data preparation, model execution, and evaluation.
+ST-CNABench benchmarks CNA inference methods on spatial transcriptomics through one public controller for data preparation, model execution, and evaluation.
 
 ## Workflow
 
-![ST-CNVBench pipeline overview](assets/Fig1_pipeline_overview.png)
+![ST-CNABench pipeline overview](assets/Fig1_pipeline_overview.png)
 
 ## Start Here
 

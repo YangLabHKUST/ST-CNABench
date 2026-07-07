@@ -1,6 +1,6 @@
 # Overview
 
-ST-CNVBench provides a public benchmark controller for CNV inference on spatial transcriptomics datasets.
+ST-CNABench provides a public benchmark controller for CNA inference on spatial transcriptomics datasets.
 The workflow is organized into three main stages:
 
 ```text
@@ -10,7 +10,7 @@ prep -> run -> eval
 ## Design Goals
 
 - standardize heterogeneous spatial transcriptomics inputs into one benchmark-ready layout
-- run multiple CNV inference methods through one shared controller
+- run multiple CNA inference methods through one shared controller
 - evaluate results with task-specific loaders and metrics
 - keep the public surface config-driven and method-extensible
 
@@ -23,19 +23,19 @@ Supported public input layouts are documented in [Dataset Preparation](data_prep
 
 ### Model Run
 
-The `run` stage executes one or more CNV inference methods against prepared datasets using `conda`, `docker`, or `apptainer` runtime modes.
+The `run` stage executes one or more CNA inference methods against prepared datasets using `conda`, `docker`, or `apptainer` runtime modes.
 See [Model Run](model_run.md) for the public model config structure.
 
 ### Evaluation
 
-The `eval` stage loads method outputs through public adapters and runs selected benchmark tasks such as `cnv_profile` or `tumor_normal`.
+The `eval` stage loads method outputs through public adapters and runs selected benchmark tasks such as `cna_profile` or `tumor_normal`.
 See [Evaluation](evaluation.md) for available tasks and GT requirements.
 
 ## Public Examples
 
 The docs include three task-focused examples:
 
-- [CNV Profile Task Example](tutorials/cnv_profile_hcc2t.md)
+- [CNA Profile Task Example](tutorials/cna_profile_hcc2t.md)
 - [Tumor-Normal Classification Task Example](tutorials/tumor_normal_hcc2t.md)
 - [Subclone Identification Task Example](tutorials/subclone_identification_slidednaseq.md)
 

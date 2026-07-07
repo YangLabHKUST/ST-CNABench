@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from st_cnvbench.dataset import run_data_preparation
-from st_cnvbench.evaluate import run_evaluation
-from st_cnvbench.model import run_all_models
-from st_cnvbench.model.base import BaseModel
+from st_cnabench.dataset import run_data_preparation
+from st_cnabench.evaluate import run_evaluation
+from st_cnabench.model import run_all_models
+from st_cnabench.model.base import BaseModel
 
 from tests.helpers import (
     write_demo_data_config,

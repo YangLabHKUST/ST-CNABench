@@ -43,7 +43,7 @@ Key subdirectories include:
 Run:
 
 ```bash
-st-cnvbench --steps prep \
+st-cnabench --steps prep \
   --data-config configs/examples/cscc_demo/data.yaml \
   --prep-ids P6_vis_rep1
 ```
@@ -66,7 +66,7 @@ Expected outputs include:
 Example with `CopyKAT` in conda mode:
 
 ```bash
-st-cnvbench --steps run \
+st-cnabench --steps run \
   --data-config configs/examples/cscc_demo/data.yaml \
   --model-config configs/examples/cscc_demo/models.yaml \
   --prep-ids P6_vis_rep1 \
@@ -93,12 +93,12 @@ Important files to inspect:
 Run:
 
 ```bash
-st-cnvbench --steps eval \
+st-cnabench --steps eval \
   --data-config configs/examples/cscc_demo/data.yaml \
   --eval-config configs/examples/cscc_demo/eval.yaml \
   --prep-ids P6_vis_rep1 \
   --models CopyKAT \
-  --eval-tasks cnv_profile
+  --eval-tasks cna_profile
 ```
 
 Check evaluation outputs under:
@@ -110,22 +110,22 @@ demo_runs/cscc_demo/evaluation/P6_vis_rep1/
 For the default demo command above, the main task output is under:
 
 ```text
-demo_runs/cscc_demo/evaluation/P6_vis_rep1/cnv_profile/
+demo_runs/cscc_demo/evaluation/P6_vis_rep1/cna_profile/
 ```
 
 Typical outputs include:
 
 - metrics summary tables
-- CNV profile plots
+- CNA profile plots
 - karyogram-level comparison plots
-- per-method exported CNV profile tables
+- per-method exported CNA profile tables
 
 ## Full Demo Command
 
 If you want to run all three stages in one command, use:
 
 ```bash
-st-cnvbench \
+st-cnabench \
   --steps prep run eval \
   --data-config configs/examples/cscc_demo/data.yaml \
   --model-config configs/examples/cscc_demo/models.yaml \
@@ -133,12 +133,12 @@ st-cnvbench \
   --prep-ids P6_vis_rep1 \
   --exec-mode conda \
   --models CopyKAT \
-  --eval-tasks cnv_profile
+  --eval-tasks cna_profile
 ```
 
 ## Try Next
 
-- For the CNV profile task example, go to [CNV Profile Task Example](cnv_profile_hcc2t.md)
+- For the CNA profile task example, go to [CNA Profile Task Example](cna_profile_hcc2t.md)
 - For the tumor-normal task example, go to [Tumor-Normal Classification Task Example](tumor_normal_hcc2t.md)
 - For the subclone task example, go to [Subclone Identification Task Example](subclone_identification_slidednaseq.md)
 - To use your own dataset, go to [Use Your Own Dataset](use_your_own_dataset.md)

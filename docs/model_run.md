@@ -1,12 +1,12 @@
 # Model Run Guide
 
-This page describes the public `models.yaml` contract used by `st-cnvbench --steps run`.
+This page describes the public `models.yaml` contract used by `st-cnabench --steps run`.
 
 Model running assumes that `prep` has already produced a standardized dataset bundle. See [data_preparation.md](data_preparation.md) for the dataset input contract.
 
 ## Included Methods
 
-The current public release includes 8 CNV inference methods:
+The current public release includes 8 CNA inference methods:
 
 - [`CalicoST`](https://github.com/raphael-group/CalicoST)
 - [`CopyKAT`](https://github.com/navinlabcode/copykat)
@@ -24,7 +24,7 @@ In the public config surface, `Clonalscope` is exposed as two wrappers so users 
 Run all enabled models on all datasets:
 
 ```bash
-st-cnvbench --steps run \
+st-cnabench --steps run \
   --data-config configs/examples/cscc_demo/data.yaml \
   --model-config configs/examples/cscc_demo/models.yaml
 ```
@@ -32,7 +32,7 @@ st-cnvbench --steps run \
 Run selected models or datasets:
 
 ```bash
-st-cnvbench --steps run \
+st-cnabench --steps run \
   --data-config configs/examples/cscc_demo/data.yaml \
   --model-config configs/templates/models.template.yaml \
   --models CopyKAT InferCNV STARCH \
@@ -42,7 +42,7 @@ st-cnvbench --steps run \
 Override the execution backend from the command line:
 
 ```bash
-st-cnvbench --steps run --exec-mode conda --data-config data.yaml --model-config models.yaml
+st-cnabench --steps run --exec-mode conda --data-config data.yaml --model-config models.yaml
 ```
 
 ## Global Settings
@@ -75,7 +75,7 @@ Each model section is keyed by the public model name in the wrapper registry.
 | Field           | Meaning                                                                        |
 | --------------- | ------------------------------------------------------------------------------ |
 | `enabled`       | Whether the wrapper is run by default.                                         |
-| `model_name`    | Wrapper name expected by ST-CNVBench. Keep this aligned with the section name. |
+| `model_name`    | Wrapper name expected by ST-CNABench. Keep this aligned with the section name. |
 | `env_name`      | Conda environment used when `exec_mode` is `conda`.                            |
 | `docker_image`  | Docker image used when `exec_mode` is `docker`.                                |
 | `apptainer_sif` | SIF image path used when `exec_mode` is `apptainer`.                           |
@@ -135,7 +135,7 @@ Current wrapper behavior when `raw.tumor_normal` is not provided:
 
 | Status        | Models                                                                                                  |
 | ------------- | ------------------------------------------------------------------------------------------------------- |
-| Supported     | `CalicoST`, `CopyKAT`, `InferCNV`, `SCEVAN`, `Numbat`, `STARCH`, `Clonalscope_NoWGS`, `Clonalscope_WGS` |
+| Supported     | `CalicoST`, `CopyKAT`, `InferCNV`, `SCEVAN`, `Numbat`, `STARCH`, `SlideCNA`, `Clonalscope_NoWGS`, `Clonalscope_WGS` |
 | Not supported | `Xclone`                                                                                                |
 
 ## Key Parameters By Model
@@ -151,6 +151,7 @@ Current wrapper behavior when `raw.tumor_normal` is not provided:
 | `Xclone`            | `snp_vcf`, `gene_region`, `eagle_path`, `genetic_map`, `panel_dir`, `n_threads`, `UMItag`, `cellTAG`, `minCOUNT`, `minMAF`, `n_clusters`  |
 | `SCEVAN`            | `n_threads`                                                                                                                               |
 | `STARCH`            | `gene_mapping_file`, `n_clusters`, `beta_spot`, `platform`, `returnnormal`                                                                |
+| `SlideCNA`          | `allowed_platforms`, `gene_annot_file`, `chrom_ord`, `spatial`, `roll_mean_window`, `avg_bead_per_bin`, `pos`, `pos_k`, `ex_k`, `max_k_silhouette`, `use_GO_terms` |
 
 ## Related Setup
 
@@ -166,4 +167,4 @@ Each enabled wrapper writes to:
 <results_dir>/<dataset_id>/<model_name>/
 ```
 
-The wrapper also writes `<model_name>_run.log` in the same directory. If execution fails, ST-CNVBench raises an error and reports the log path plus the last log lines.
+The wrapper also writes `<model_name>_run.log` in the same directory. If execution fails, ST-CNABench raises an error and reports the log path plus the last log lines.

@@ -51,7 +51,7 @@ def write_demo_data_config(tmp_path: Path) -> Path:
                     / "P6_vis_rep1"
                     / "metadata_P6_vis_rep1_tumor_normal.tsv"
                 ),
-                "cnv_gt": str(
+                "cna_gt": str(
                     dataset_root
                     / "raw"
                     / "P6_vis"

@@ -14,7 +14,7 @@ P6_vis_rep1:
     root: "${dataset_root}/raw/P6_vis/P6_vis_rep1"
     tumor_normal: "${dataset_root}/raw/P6_vis/P6_vis_rep1/metadata_P6_vis_rep1_tumor_normal.tsv"
     tumor_normal_gt: "${dataset_root}/raw/P6_vis/P6_vis_rep1/metadata_P6_vis_rep1_tumor_normal.tsv"
-    cnv_gt: "${dataset_root}/raw/P6_vis/GT/WES_CNV_FACETS/P6_tumor_vs_P6_normal.vcf"
+    cna_gt: "${dataset_root}/raw/P6_vis/GT/WES_CNV_FACETS/P6_tumor_vs_P6_normal.vcf"
     wgs_wes_tumor_bedg: "${dataset_root}/raw/P6_vis/GT/wes_100kb_counts/P6_tumor.hg38.100000b.windows.counts.bedg"
     wgs_wes_normal_bedg: "${dataset_root}/raw/P6_vis/GT/wes_100kb_counts/P6_normal.hg38.100000b.windows.counts.bedg"
     bam: "${dataset_root}/raw/P6_vis/P6_vis_rep1/possorted_genome_bam.bam"

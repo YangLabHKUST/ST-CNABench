@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 
-LABEL org.opencontainers.image.title="ST-CNVBench-STARCH"
+LABEL org.opencontainers.image.title="ST-CNABench-STARCH"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \

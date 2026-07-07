@@ -9,22 +9,22 @@ Evaluation assumes that model outputs already exist under `project_settings.resu
 Run one evaluation task for selected models:
 
 ```bash
-st-cnvbench --steps eval \
+st-cnabench --steps eval \
   --data-config configs/examples/cscc_demo/data.yaml \
   --eval-config configs/examples/cscc_demo/eval.yaml \
   --models CopyKAT \
-  --eval-tasks cnv_profile
+  --eval-tasks cna_profile
 ```
 
 Run evaluation for selected datasets, models and tasks:
 
 ```bash
-st-cnvbench --steps eval \
+st-cnabench --steps eval \
   --data-config data.yaml \
   --eval-config eval.yaml \
   --prep-ids sample_1 sample_2 \
   --models InferCNV CopyKAT STARCH \
-  --eval-tasks cnv_profile tumor_normal
+  --eval-tasks cna_profile tumor_normal
 ```
 
 If `--eval-tasks` is omitted, the controller attempts all registered tasks. For public examples, specify only tasks whose required GT files are present.
@@ -43,7 +43,7 @@ If `--eval-tasks` is omitted, the controller attempts all registered tasks. For 
 
 | Field             | Meaning                                                             |
 | ----------------- | ------------------------------------------------------------------- |
-| `bin_size`        | Genomic bin size used by CNV profile and clone-level mapping tasks. |
+| `bin_size`        | Genomic bin size used by CNA profile and clone-level mapping tasks. |
 | `genome_version`  | Reference genome label, currently used by clonal mapping utilities. |
 | `gene_annot_path` | Gene annotation table used by expression-to-genomic-bin conversion. |
 
@@ -68,7 +68,7 @@ global_params:
 ```yaml
 eval_list:
   InferCNV:
-    eval_name: ["InferCNV_expr", "InferCNV_cnv"]
+    eval_name: ["InferCNV_expr", "InferCNV_cna"]
   CopyKAT:
     eval_name: ["CopyKAT"]
 ```
@@ -83,15 +83,15 @@ The `eval_name` values select loader adapters for the output format produced by 
 
 | Model key           | Loader names                    |
 | ------------------- | ------------------------------- |
-| `InferCNV`          | `InferCNV_expr`, `InferCNV_cnv` |
+| `InferCNV`          | `InferCNV_expr`, `InferCNV_cna` |
 | `CopyKAT`           | `CopyKAT`                       |
-| `SCEVAN`            | `SCEVAN_expr`, `SCEVAN_cnv`     |
+| `SCEVAN`            | `SCEVAN_expr`, `SCEVAN_cna`     |
 | `Clonalscope_WGS`   | `Clonalscope_WGS`               |
 | `Clonalscope_NoWGS` | `Clonalscope_NoWGS`             |
-| `Numbat`            | `Numbat_expr`, `Numbat_cnv`     |
+| `Numbat`            | `Numbat_expr`, `Numbat_cna`     |
 | `CalicoST`          | `CalicoST`                      |
 | `STARCH`            | `STARCH`                        |
-| `Xclone`            | `Xclone_expr`, `Xclone_cnv`     |
+| `Xclone`            | `Xclone_expr`, `Xclone_cna`     |
 
 Use the loader that matches the model output type you want to evaluate. Expression-derived loaders usually need `gene_annot_path` to map genes to genomic bins.
 
@@ -102,12 +102,12 @@ Available task names for `--eval-tasks`:
 | Task                          | Purpose                                                                   | Required GT or inputs                                                                           |
 | ----------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `efficiency`                  | Runtime and memory summary.                                               | No biological GT. Requires conda-mode `.perf` files generated during model execution.           |
-| `resolution`                  | CNV resolution comparison across model outputs.                           | No GT. Requires model CNV outputs and `global_params.gene_annot_path`.                          |
+| `cna_resolution`              | CNA resolution comparison across model outputs.                           | No GT. Requires model CNA outputs and `global_params.gene_annot_path`.                          |
 | `tumor_normal`                | Tumor/normal prediction evaluation.                                       | `raw.tumor_normal_gt`; subset mode also requires `raw.tumor_normal`.                            |
-| `cnv_profile`                 | CNV profile concordance against sample-level CNV GT.                      | `raw.cnv_gt` as a FACETS/VCF-like segment file.                                                 |
-| `subclone_detection_in_slice` | Spot-level subclone assignment and clone-profile matching within a slice. | `raw.subclone_gt`; clone-profile metrics also need clone-level CNV profiles from `raw.cnv_gt`.  |
+| `cna_profile`                 | CNA profile concordance against sample-level CNA GT.                      | `raw.cna_gt` as a FACETS/VCF-like segment file.                                                 |
+| `subclone_detection_in_slice` | Spot-level subclone assignment and clone-profile matching within a slice. | `raw.subclone_gt`; clone-profile metrics also need clone-level CNA profiles from `raw.cna_gt`.  |
 | `subclone_detection_organ`    | Organ-level subclone assignment across slices or merged samples.          | `raw.subclone_gt`.                                                                              |
-| `clonal_evolution`            | Clone-level CNV tree and spatial phylogeography plots.                    | Model clone labels/profiles and spatial coordinates; no separate GT tree is currently required. |
+| `clonal_evolution`            | Clone-level CNA tree and spatial phylogeography plots.                    | Model clone labels/profiles and spatial coordinates; no separate GT tree is currently required. |
 
 ## GT Files In `data.yaml`
 
@@ -133,9 +133,9 @@ This is not GT. It is the reference-normal annotation used during model running 
 
 In `tumor_normal_mode: subset`, evaluation removes the reference normal spots from the comparison set, so both `raw.tumor_normal` and `raw.tumor_normal_gt` are required.
 
-### `raw.cnv_gt` For `cnv_profile`
+### `raw.cna_gt` For `cna_profile`
 
-For `cnv_profile`, `raw.cnv_gt` should point to a FACETS/VCF-like segment file.
+For `cna_profile`, `raw.cna_gt` should point to a FACETS/VCF-like segment file.
 
 Required content:
 
@@ -167,9 +167,9 @@ AAAG...  clone_2
 
 The evaluator renames these columns internally to `Barcodes` and `Label_preds`.
 
-### Clone-Level CNV GT For Subclone Tasks
+### Clone-Level CNA GT For Subclone Tasks
 
-`subclone_detection_in_slice` can also compare predicted clone CNV profiles against GT clone CNV profiles.
+`subclone_detection_in_slice` can also compare predicted clone CNA profiles against GT clone CNA profiles.
 
 Current loader expectation: a directory containing files named:
 
@@ -177,9 +177,9 @@ Current loader expectation: a directory containing files named:
 <clone_id>_GT_Profile.txt
 ```
 
-Each profile file should contain genomic bins and a CNV score column such as `CN_Score` or `CN_Score_Continuous`.
+Each profile file should contain genomic bins and a CNA score column such as `CN_Score` or `CN_Score_Continuous`.
 
-This is separate from the FACETS/VCF-like file used by `cnv_profile`. If a dataset needs both sample-level `cnv_profile` GT and clone-level subclone CNV GT, keep the paths clear in the dataset config used for that run.
+This is separate from the FACETS/VCF-like file used by `cna_profile`. If a dataset needs both sample-level `cna_profile` GT and clone-level subclone CNA GT, keep the paths clear in the dataset config used for that run.
 
 ### `raw.beads_mapping`
 
@@ -220,9 +220,9 @@ Common task directories include:
 
 ```text
 computational_efficiency/
-cnv_resolution/
+cna_resolution/
 tumor_normal/
-cnv_profile/
+cna_profile/
 subclone_detection/
 GT/
 ```

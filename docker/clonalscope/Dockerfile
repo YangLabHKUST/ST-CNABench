@@ -1,6 +1,6 @@
 FROM bioconductor/bioconductor_docker:RELEASE_3_21
 
-LABEL org.opencontainers.image.title="ST-CNVBench-Clonalscope" \
+LABEL org.opencontainers.image.title="ST-CNABench-Clonalscope" \
       org.opencontainers.image.description="Docker image for Clonalscope and its dependencies (Seurat, rtracklayer)" \
       org.opencontainers.image.authors="HAN SHI"
 

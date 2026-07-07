@@ -1,6 +1,6 @@
 # External Tool Setup
 
-Some model wrappers in ST-CNVBench require external tools under this directory.
+Some model wrappers in ST-CNABench require external tools under this directory.
 
 ## Which Models Need External Tools
 

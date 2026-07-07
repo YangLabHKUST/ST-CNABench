@@ -1,8 +1,8 @@
-site_name: ST-CNVBench
-site_description: Benchmark CNV inference methods on spatial transcriptomics.
+site_name: ST-CNABench
+site_description: Benchmark CNA inference methods on spatial transcriptomics.
 site_url: !ENV [READTHEDOCS_CANONICAL_URL, ""]
-repo_url: https://github.com/YangLabHKUST/ST-CNVBench
-repo_name: YangLabHKUST/ST-CNVBench
+repo_url: https://github.com/YangLabHKUST/ST-CNABench
+repo_name: YangLabHKUST/ST-CNABench
 docs_dir: docs
 
 theme:
@@ -18,7 +18,7 @@ nav:
       - Installation: installation.md
   - Tutorials:
       - Quickstart Demo And Expected Outputs: tutorials/quickstart_demo.md
-      - CNV Profile Task Example: tutorials/cnv_profile_hcc2t.md
+      - CNA Profile Task Example: tutorials/cna_profile_hcc2t.md
       - Tumor-Normal Classification Task Example: tutorials/tumor_normal_hcc2t.md
       - Subclone Identification Task Example: tutorials/subclone_identification_slidednaseq.md
       - Use Your Own Dataset: tutorials/use_your_own_dataset.md

@@ -1,6 +1,6 @@
 # Docker Runtime Images
 
-This directory contains Dockerfile definitions for the ST-CNVBench method runtimes.
+This directory contains Dockerfile definitions for the ST-CNABench method runtimes.
 
 ## Images Used By The Public Template
 

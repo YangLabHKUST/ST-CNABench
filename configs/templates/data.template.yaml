@@ -16,7 +16,7 @@ example_dataset:
     tumor_normal: "${dataset_root}/example_dataset/metadata_tumor_normal.tsv"
     tumor_normal_gt: "${dataset_root}/example_dataset/metadata_tumor_normal_gt.tsv"
     subclone_gt: "${dataset_root}/example_dataset/metadata_subclone.tsv"
-    cnv_gt: "${dataset_root}/example_dataset/GT/example_cnv_gt.vcf.tsv"
+    cna_gt: "${dataset_root}/example_dataset/GT/example_cna_gt.vcf.tsv"
     wgs_wes_tumor_bedg: null
     wgs_wes_normal_bedg: null
     bam: null

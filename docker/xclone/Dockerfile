@@ -1,6 +1,6 @@
 FROM continuumio/miniconda3:latest
 
-LABEL org.opencontainers.image.title="ST-CNVBench-XClone"
+LABEL org.opencontainers.image.title="ST-CNABench-XClone"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \

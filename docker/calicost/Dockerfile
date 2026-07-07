@@ -1,6 +1,6 @@
 FROM continuumio/miniconda3:latest
 
-LABEL org.opencontainers.image.title="ST-CNVBench-CalicoST" \
+LABEL org.opencontainers.image.title="ST-CNABench-CalicoST" \
       org.opencontainers.image.authors="HAN SHI"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

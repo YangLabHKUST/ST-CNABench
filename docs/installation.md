@@ -1,6 +1,6 @@
 # Installation
 
-ST-CNVBench separates the Python controller from the per-method runtime environments.
+ST-CNABench separates the Python controller from the per-method runtime environments.
 
 ## Choose A Runtime Mode
 
@@ -44,12 +44,12 @@ apptainer pull apptainer_sif/copykat.sif docker://hans0410/cnv-benchmark-copykat
 Clone the repository, then create the controller environment from the repository root.
 
 ```bash
-git clone https://github.com/YangLabHKUST/ST-CNVBench.git
-cd STCNV-Bench
+git clone https://github.com/YangLabHKUST/ST-CNABench.git
+cd ST-CNABench
 conda create -n benchmark_env python=3.10 -y
 conda activate benchmark_env
 pip install -e .
-st-cnvbench --help
+st-cnabench --help
 ```
 
 The package requires Python `>=3.10`. The initial `pip install -e .` typically takes about `10-20 min`, depending on your machine and network.

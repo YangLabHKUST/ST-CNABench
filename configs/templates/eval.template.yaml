@@ -11,20 +11,22 @@ global_params:
 
 eval_list:
   InferCNV:
-    eval_name: ["InferCNV_expr", "InferCNV_cnv"]
+    eval_name: ["InferCNV_expr", "InferCNV_cna"]
   CopyKAT:
     eval_name: ["CopyKAT"]
   SCEVAN:
-    eval_name: ["SCEVAN_expr", "SCEVAN_cnv"]
+    eval_name: ["SCEVAN_expr", "SCEVAN_cna"]
   Clonalscope_WGS:
     eval_name: ["Clonalscope_WGS"]
   Clonalscope_NoWGS:
     eval_name: ["Clonalscope_NoWGS"]
   Numbat:
-    eval_name: ["Numbat_expr", "Numbat_cnv"]
+    eval_name: ["Numbat_expr", "Numbat_cna"]
   CalicoST:
     eval_name: ["CalicoST"]
   STARCH:
     eval_name: ["STARCH"]
   Xclone:
-    eval_name: ["Xclone_expr", "Xclone_cnv"]
+    eval_name: ["Xclone_expr", "Xclone_cna"]
+  SlideCNA:
+    eval_name: ["SlideCNA"]

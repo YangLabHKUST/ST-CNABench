@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from st_cnvbench.cli import build_parser
-from st_cnvbench.config import (
+from st_cnabench.cli import build_parser
+from st_cnabench.config import (
     ConfigValidationError,
     load_data_config,
     load_eval_config,

@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from st_cnvbench.config import load_model_config
-from st_cnvbench.dataset import DatasetPreparator, run_data_preparation
-from st_cnvbench.model.tools_scripts import MODEL_REGISTRY
+from st_cnabench.config import load_model_config
+from st_cnabench.dataset import DatasetPreparator, run_data_preparation
+from st_cnabench.model.tools_scripts import MODEL_REGISTRY
 
 from tests.helpers import create_support_tree, write_demo_data_config, write_full_model_config
 

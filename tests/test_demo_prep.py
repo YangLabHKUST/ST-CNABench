@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from st_cnvbench.dataset import run_data_preparation
+from st_cnabench.dataset import run_data_preparation
 
 from tests.helpers import get_demo_test_output_root, write_demo_data_config
 

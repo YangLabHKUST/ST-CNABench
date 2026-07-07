@@ -1,6 +1,6 @@
 # Reference Data
 
-ST-CNVBench uses two kinds of reference data.
+ST-CNABench uses two kinds of reference data.
 
 ## Bundled Small References
 

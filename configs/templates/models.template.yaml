@@ -135,3 +135,19 @@ STARCH:
   per_dataset:
     example_dataset:
       n_clusters: 4
+
+SlideCNA:
+  enabled: false
+  env_name: "SlideCNA"
+  model_name: "SlideCNA"
+  allowed_platforms: ["SlideRNAseq_v2"]
+  gene_annot_file: "${refs}/hg38_genome_info/hg38_genes_annot.txt"
+  chrom_ord: ["chr1", "chr2", "chr3", "chr4", "chr5", "chr6", "chr7", "chr8", "chr9", "chr10", "chr11", "chr12", "chr13", "chr14", "chr15", "chr16", "chr17", "chr18", "chr19", "chr20", "chr21", "chr22", "chrX", "chrY"]
+  spatial: true
+  roll_mean_window: 101
+  avg_bead_per_bin: 12
+  pos: true
+  pos_k: 55
+  ex_k: 1
+  max_k_silhouette: 10
+  use_GO_terms: false

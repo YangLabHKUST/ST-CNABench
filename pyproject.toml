@@ -3,9 +3,9 @@ requires = ["setuptools>=68,<82", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "st-cnvbench"
+name = "st-cnabench"
 version = "0.1.0"
-description = "Benchmark CNV inference methods on spatial transcriptomics."
+description = "Benchmark CNA inference methods on spatial transcriptomics."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Proprietary until a publication license is chosen"}
@@ -37,7 +37,7 @@ dependencies = [
 dev = ["pytest>=8.0"]
 
 [project.scripts]
-st-cnvbench = "st_cnvbench.cli:main"
+st-cnabench = "st_cnabench.cli:main"
 
 [tool.setuptools]
 include-package-data = true
@@ -46,4 +46,4 @@ include-package-data = true
 where = ["src"]
 
 [tool.setuptools.package-data]
-st_cnvbench = ["**/*.R", "**/*.sh", "**/*.md", "**/*.template"]
+st_cnabench = ["**/*.R", "**/*.sh", "**/*.md", "**/*.template"]

@@ -1,6 +1,6 @@
 # Conda or Mamba Environment Setup
 
-This directory provides environment setup for the public methods in ST-CNVBench.
+This directory provides environment setup for the public methods in ST-CNABench.
 
 If `mamba` is available, prefer it because dependency resolution is usually faster.
 In the commands below, set `PKG_MGR` once to either `mamba` or `conda`.

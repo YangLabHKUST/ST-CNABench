@@ -1,6 +1,6 @@
 FROM bioconductor/bioconductor_docker:RELEASE_3_21
 
-LABEL org.opencontainers.image.title="ST-CNVBench-SCEVAN" \
+LABEL org.opencontainers.image.title="ST-CNABench-SCEVAN" \
       org.opencontainers.image.description="Docker image for SCEVAN (v1.0.3) and yaGST" \
       org.opencontainers.image.authors="HANShi <shanav@connect.ust.hk>"
 
