@@ -6,7 +6,7 @@ Model running assumes that `prep` has already produced a standardized dataset bu
 
 ## Included Methods
 
-The current public release includes 8 CNA inference methods:
+The current public release includes 9 CNA inference methods:
 
 - [`CalicoST`](https://github.com/raphael-group/CalicoST)
 - [`CopyKAT`](https://github.com/navinlabcode/copykat)
@@ -16,6 +16,7 @@ The current public release includes 8 CNA inference methods:
 - [`Xclone`](https://github.com/single-cell-genetics/XClone)
 - [`SCEVAN`](https://github.com/AntonioDeFalco/SCEVAN)
 - [`STARCH`](https://github.com/raphael-group/STARCH)
+- [`SlideCNA`](https://github.com/dkzhang777/SlideCNA)
 
 In the public config surface, `Clonalscope` is exposed as two wrappers so users can run the no-WGS and WGS-assisted modes separately.
 

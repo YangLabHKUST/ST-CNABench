@@ -3,7 +3,7 @@
 ST-CNABench is a public benchmark framework for copy number alteration inference on spatial transcriptomics.
 It provides one controller for dataset preparation, model execution, and evaluation through a unified `prep -> run -> eval` workflow.
 
-The current public release includes 8 CNA inference methods.
+The current public release includes 9 CNA inference methods.
 
 ## Included Methods
 
@@ -15,6 +15,7 @@ The current public release includes 8 CNA inference methods.
 - [`Xclone`](https://github.com/single-cell-genetics/XClone)
 - [`SCEVAN`](https://github.com/AntonioDeFalco/SCEVAN)
 - [`STARCH`](https://github.com/raphael-group/STARCH)
+- [`SlideCNA`](https://github.com/dkzhang777/SlideCNA)
 
 ## Installation
 

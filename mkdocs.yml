@@ -18,9 +18,11 @@ nav:
       - Installation: installation.md
   - Tutorials:
       - Quickstart Demo And Expected Outputs: tutorials/quickstart_demo.md
+      - Dataset Properties Quick Check: tutorials/dataset_properties_quick_check.md
       - CNA Profile Task Example: tutorials/cna_profile_hcc2t.md
       - Tumor-Normal Classification Task Example: tutorials/tumor_normal_hcc2t.md
       - Subclone Identification Task Example: tutorials/subclone_identification_slidednaseq.md
+      - High-Resolution ST Exploration: tutorials/high_resolution_st_exploration.md
       - Use Your Own Dataset: tutorials/use_your_own_dataset.md
       - Use Your Own Model: tutorials/use_your_own_model.md
   - Detailed:
