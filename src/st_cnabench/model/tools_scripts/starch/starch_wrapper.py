@@ -156,6 +156,14 @@ class STARCHModel(BaseModel):
             default_value=True
         )
 
+        spatial_l = get_per_dataset_param(
+            model_cfg=self.model_cfg,
+            dataset_cfg=dataset_cfg,
+            key="l",
+            default_key="l",
+            default_value=1.0
+        )
+
         # Build command
         cmd = [
             "python",
@@ -165,6 +173,7 @@ class STARCHModel(BaseModel):
             "--outdir", str(output_dir),
             "--n_clusters", str(n_clusters),
             "--beta_spot", str(beta_spot),
+            "--l", str(spatial_l),
             "--platform", str(platform),
             "--output", str(ds_id)
         ]

@@ -83,7 +83,7 @@ class STARCH:
 	using spatial relationships and gene adjacencies along chromosomes
 	"""
 
-	def __init__(self,data,normal_spots=[],labels=[],beta_spots=2,n_clusters=3,num_states=3,gene_mapping_file_name='hgTables_hg19.txt',nthreads=0,platform="ST"):
+	def __init__(self,data,normal_spots=[],labels=[],beta_spots=2,n_clusters=3,num_states=3,gene_mapping_file_name='hgTables_hg19.txt',nthreads=0,platform="ST",l=1.0):
 		"""
 		The constructor for HMFR_CNA
 
@@ -137,7 +137,7 @@ class STARCH:
 		self.normal_state = int((self.num_states-1)/2)
 
 		logger.info('getting spot network...')
-		self.get_spot_network(self.data,self.columns[self.tumor_spots])
+		self.get_spot_network(self.data,self.columns[self.tumor_spots],l=l)
 		if isinstance(labels, str):
 			self.get_labels(labels)
 		if len(labels)>0:

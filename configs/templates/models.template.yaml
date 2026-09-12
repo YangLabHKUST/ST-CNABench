@@ -130,6 +130,7 @@ STARCH:
   gene_mapping_file: "${refs}/hg38_genome_info/hg38_genes_simple.txt"
   n_clusters: 3
   beta_spot: 2
+  l: 1.0 # Spatial distance scale; can also be overridden per dataset.
   platform: "Visium"
   returnnormal: 1
   per_dataset:
